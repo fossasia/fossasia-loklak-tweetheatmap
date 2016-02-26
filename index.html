@@ -20,6 +20,7 @@
   <script src="public/lib/jquery/dist/jquery.min.js"></script>
   <script src="public/lib/angular/angular.min.js"></script>
   <script src="public/lib/moment/min/moment.min.js"></script>
+  <script src="public/lib/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="public/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
   <script src="public/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
   <script src="public/lib/angular-daterangepicker/js/angular-daterangepicker.min.js"></script>
@@ -29,13 +30,34 @@
 
 <body>
   <div ng-controller="search">
+
+  <div class="alert alert-danger fade in" id="myAlert" style="background-color:#333333;margin:1%">
+        <a href="#" style="color:white" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <p style="color:white"><strong>Pro Tip 1 --<> </strong> Enter a tag or a query to be searched.</p>
+  </div>
+
     <form ng-submit="search()">
+
       <input type="text" class="form-control" placeholder="Search query" ng-model="query" style="width: 50%; margin: 1%;">
       <input date-range-picker class="form-control date-picker" placeholder="Tweets interval (optional)" type="text" ng-model="datePicker" style="width: 50%; margin: 1%;"/>
       <input id="timepicker1" placeholder="Since time" class="form-control" data-provide="timepicker" ng-model="sinceTime" data-template="modal" data-minute-step="1" data-modal-backdrop="true" type="text" style="width: 50%; margin: 1%;"/>
       <input id="timepicker2" placeholder="Until time" class="form-control" data-provide="timepicker" ng-model="untilTime" data-template="modal" data-minute-step="1" data-modal-backdrop="true" type="text" style="width: 50%; margin: 1%;"/>
       <button type="submit" style="margin: 1%;" class="btn btn-default">Search</button>
+
+    <div> 
+      <modal title="Hey User!!" visible="showModal">
+      <p>Input a string in the <strong>query</strong> field for the desired result</p> 
+      <hr>
+      </modal>
+    </div>
+
     </form>
+
+      <div class="alert alert-danger fade in" id="myAlert2" style="margin:1%">
+       <a href="#"  class="close" data-dismiss="alert" aria-label="close">&times;</a>
+       <strong>Pro Tip 2 --<></strong> Enter the time intervals to get the accurate data.
+      </div>
+
     <div class="alert alert-info" role="alert" ng-if="loading"><b>{{ loading }}</b></div>
     <div id="map" class="map"></div>
   </div>
