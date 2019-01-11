@@ -4,7 +4,7 @@
 
 Heat map with tweets by search query using Loklak API and OpenLayers 3.
 ## Try it
-The project is avaliable at https://fossasia.github.io/loklak_tweetheatmap 
+The project is available at https://fossasia.github.io/loklak_tweetheatmap 
 ## Technology stack
 * Angular.js 1.5.0
 * OpenLayers 3.12.1
